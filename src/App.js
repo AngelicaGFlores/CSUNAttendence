@@ -1,5 +1,6 @@
 import "./App.css";
 import HomePage from "./components/HomePage";
+import SelectFaculty from "./components/SelectFaculty";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       {
         //-- Content --
       }
-      <HomePage />
+      <SelectFaculty />
       {
         //-- Footer --
       }
