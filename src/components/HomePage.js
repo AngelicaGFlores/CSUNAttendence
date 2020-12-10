@@ -17,7 +17,7 @@ export class HomePage extends Component {
           <h1>Image goes here</h1>
         </div>
         <div className="Navigation-Buttons">
-          <Button>Faculty</Button> <br/>
+          <Button>Faculty</Button> <br />
           <Button>Student</Button>
         </div>
       </div>
