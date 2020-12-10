@@ -9,6 +9,7 @@ export class FacultyProfile extends Component {
           // -- Image Tag --
         }
         <image>Image goes here</image>
+        <br/>
         {
           // -- Navigation Buttons 3 : Approvals - Generate QR Code - Check Attendence --
         }
@@ -22,7 +23,7 @@ export class FacultyProfile extends Component {
         {
           // -- Faculty Information : Name - Id --
         }
-        <h2>FULL Name</h2>
+        <h1>FULL Name</h1>
         <h3>Faculty ID</h3>
       </div>
     );
