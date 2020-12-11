@@ -8,7 +8,7 @@ export class FacultyProfile extends Component {
         {
           // -- Image Tag --
         }
-        <image>Image goes here</image>
+        <h1>Image goes here</h1>
         <br/>
         {
           // -- Navigation Buttons 3 : Approvals - Generate QR Code - Check Attendence --
