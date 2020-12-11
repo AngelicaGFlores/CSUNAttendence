@@ -1,6 +1,9 @@
 import "./App.css";
+import FacultyProfile from "./components/FacultyProfile";
 import HomePage from "./components/HomePage";
 import SelectFaculty from "./components/SelectFaculty";
+import SelectStudent from "./components/SelectStudent";
+import StudentProfile from "./components/StudentProfile";
 
 function App() {
   return (
@@ -11,7 +14,7 @@ function App() {
       {
         //-- Content --
       }
-      <SelectFaculty />
+      <SelectFaculty/>
       {
         //-- Footer --
       }
