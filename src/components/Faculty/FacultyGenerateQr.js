@@ -31,7 +31,6 @@ export class FacultyGenerateQr extends Component {
   }
   render() {
     console.log(this.isQrGenerated);
-    let thisUserId = this.state.userId;
     //Make a lambda Call that passes userID;
     let thisUserInformation = {
       professorId: "1",

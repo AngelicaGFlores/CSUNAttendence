@@ -6,7 +6,6 @@ export class FacultyRequests extends Component {
     userId: 1,
   };
   render() {
-    let thisUserId = this.state.userId;
     //Make a lambda Call that passes userID;
     let thisUserInformation = {
       professorId: "1",
@@ -23,7 +22,7 @@ export class FacultyRequests extends Component {
       ],
       requests: [
         {
-          requestId : "1", 
+          approvalId : "1", 
           studentId : "1",
           date: "01/27/2021",
           courseId: "20896",
@@ -31,11 +30,8 @@ export class FacultyRequests extends Component {
         },
       ],
     };
-    // Split Information
-    let userFullName =
-      thisUserInformation.firstName + " " + thisUserInformation.lastName;
     let allRequests = thisUserInformation.requests.map((request) => (
-      <tr key={request.requestId}>
+      <tr key={request.approvalId}>
         <td>{request.studentId}</td>
         <td>{request.date}</td>
         <td>{request.courseId}</td>

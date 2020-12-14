@@ -1,30 +1,19 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-
 export class FacultyProfile extends Component {
   state = {
-    userId: 1,
+    professorData : {}
   };
+  async componentDidMount(){
+    let props = this.props;
+    console.log(props.location.state.professorInfo)
+    this.setState({
+      professorData : props.location.state.professorInfo
+    });
+  }
   render() {
-    let thisUserId = this.state.userId;
-    //Make a lambda Call that passes userID;
-    let thisUserInformation = {
-      professorId: "1",
-      firstName: "Adam",
-      lastName: "Kaplan",
-      courses: [
-        {
-          courseId: "16884",
-          department: "COMP",
-          classNumber: "310",
-          classSection: "03",
-          className: "Auto Lang + Computin",
-        },
-      ],
-    }
-    // Split Information
-    let userFullName =
-      thisUserInformation.firstName + " " + thisUserInformation.lastName;
+    //Faculty Information
+    let professorFullName = this.state.professorData.firstName + " " + this.state.professorData.lastName;
     return (
       <div>
         {
@@ -45,8 +34,8 @@ export class FacultyProfile extends Component {
         {
           // -- Faculty Information : Name - Id --
         }
-        <h1>{userFullName}</h1>
-        <h3>{this.state.userId}</h3>
+        <h1>{professorFullName}</h1>
+        <h3>{this.state.professorData.professorId}</h3>
       </div>
     );
   }

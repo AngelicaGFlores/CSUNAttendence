@@ -18,7 +18,6 @@ export class StudentRequest extends Component {
     return today;
   }
   render() {
-    let thisUserId = this.state.userId;
     //Make a lambda Call that passes userID;
     let thisUserInformation = {
       studentId: "1",

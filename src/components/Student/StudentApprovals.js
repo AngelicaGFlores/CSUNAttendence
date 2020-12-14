@@ -3,10 +3,9 @@ import {Table} from 'reactstrap';
 
 export class StudentApprovals extends Component {
   state = {
-    userId: 1,
+    studentId: null,
   };
   render() {
-    let thisUserId = this.state.userId;
     //Make a lambda Call that passes userID;
     let thisUserInformation = {
       studentId: "1",
