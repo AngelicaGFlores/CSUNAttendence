@@ -10,6 +10,8 @@ import HomePage from "./components/HomePage";
 import FacultyProfile from "./components/Faculty/FacultyProfile";
 import FacultyRequests from "./components/Faculty/FacultyRequests";
 import FacultyGenerateQr from "./components/Faculty/FacultyGenerateQr";
+import Requests from "./components/Faculty/Requests";
+
 /*
   Student Imports
 */
@@ -22,12 +24,13 @@ function App() {
   return (
     <Router>
       <Route path="/" exact component={HomePage} />
-        <Route path="/faculty/profile" component={FacultyProfile} />
-        <Route path="/faculty/requests" component={FacultyRequests} />
-        <Route path="/faculty/generate" component={FacultyGenerateQr} />
+      <Route path="/faculty/profile" exact component={FacultyProfile} />
+      <Route path="/faculty/requests" component={FacultyRequests} />
+      <Route path="/faculty/generate" component={FacultyGenerateQr} />
       <Route path="/student/profile" component={StudentProfile} />
       <Route path="/student/approvals" component={StudentApprovals} />
       <Route path="/student/request" component={StudentRequest} />
+      <Route path="/faculty/profile/select/requests" component={Requests}/>
     </Router>
   );
 }

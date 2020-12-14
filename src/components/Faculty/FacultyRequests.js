@@ -3,44 +3,17 @@ import {Table, Button} from 'reactstrap';
 
 export class FacultyRequests extends Component {
   state = {
-    userId: 1,
+    professorData : {}
   };
+  componentDidMount(){
+    let props = this.props;
+    console.log(props.location.state.professorInfo)
+    this.setState({
+      professorData : props.location.state.professorInfo
+    });
+  }
   render() {
-    //Make a lambda Call that passes userID;
-    let thisUserInformation = {
-      professorId: "1",
-      firstName: "Adam",
-      lastName: "Kaplan",
-      courses: [
-        {
-          courseId: "16884",
-          department: "COMP",
-          classNumber: "310",
-          classSection: "03",
-          className: "Auto Lang + Computin",
-        },
-      ],
-      requests: [
-        {
-          approvalId : "1", 
-          studentId : "1",
-          date: "01/27/2021",
-          courseId: "20896",
-          message: "Me Feel Bad",
-        },
-      ],
-    };
-    let allRequests = thisUserInformation.requests.map((request) => (
-      <tr key={request.approvalId}>
-        <td>{request.studentId}</td>
-        <td>{request.date}</td>
-        <td>{request.courseId}</td>
-        <td>{request.message}</td>
-        <td><Button>Deny</Button></td>
-        <td><Button>Approve</Button></td>
 
-      </tr>
-    ));
     return (
       <div>
         <Table dark responsive striped bordered hover>
@@ -54,7 +27,6 @@ export class FacultyRequests extends Component {
               <th> Submit </th>
             </tr>
           </thead>
-          <tbody>{allRequests}</tbody>
         </Table>
       </div>
     );

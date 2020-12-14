@@ -1,19 +1,26 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
+
 export class FacultyProfile extends Component {
   state = {
-    professorData : {}
+    professorInfo: {},
+    studentId : '1', // Simulate a specific student click
+    fullName : "Loading"
   };
-  async componentDidMount(){
+  async componentDidMount() {
     let props = this.props;
-    console.log(props.location.state.professorInfo)
+    console.log(props.location.state.professorInfo);
     this.setState({
-      professorData : props.location.state.professorInfo
+      professorInfo: props.location.state.professorInfo,
+      fullName : props.location.state.professorInfo.firstName + " " + props.location.state.professorInfo.lastName
     });
   }
   render() {
+    let propss = this.props;
+
     //Faculty Information
-    let professorFullName = this.state.professorData.firstName + " " + this.state.professorData.lastName;
+    let professorFullName = this.state.fullName
     return (
       <div>
         {
@@ -24,9 +31,29 @@ export class FacultyProfile extends Component {
         {
           // -- Navigation Buttons 3 : Approvals - Generate QR Code - Check Attendence --
         }
-        <Button>Approvals</Button>
+        <Link
+          to={{
+            pathname: "/faculty/profile/select/requests",
+            state: { 
+              professorInfo: this.state.professorInfo,
+              studentId : this.state.studentId
+             }
+          }}
+        >
+          <Button>Approvals</Button>
+        </Link>
         <br />
-        <Button>generate QR Code</Button>
+        <Link
+          to={{
+            pathname: "/faculty/generate",
+            state: { 
+              professorInfo: this.state.professorInfo,
+              studentId : this.state.studentId
+             }
+          }}
+        >
+        <Button>Generate QR Code</Button>
+        </Link>
         <br />
         <Button>Check Attendence</Button>
         <br />
@@ -35,7 +62,7 @@ export class FacultyProfile extends Component {
           // -- Faculty Information : Name - Id --
         }
         <h1>{professorFullName}</h1>
-        <h3>{this.state.professorData.professorId}</h3>
+        <h3>{this.state.professorInfo.professorId}</h3>
       </div>
     );
   }
